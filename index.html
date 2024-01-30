@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark</title>
+    <link rel="stylesheet" href="src/style/main_header.css">
+    <link rel="stylesheet" href="src/style/slider.css">
+</head>
+<body>
+
+    <header class='header'>
+        
+        <nav class='navbar'>
+        <a href='index.html'>Главная</a>
+        <a href='pages/articles.html'>Мои статьи</a>
+        <a href='pages/works.html'>Примеры работ</a>
+        </nav>
+        
+        <img class='menu_btn' src="src/icons/menu.png"/>
+
+        <nav class='contacts'>
+            <a href='pages/autor.html'>Об авторе</a>
+            <a href='https://t.me/Mark_Bogdan'><img src="src/icons/telegram.png"/></a>
+        </nav>
+    </header>     
+    
+    <div id="slider"> 
+    <div class="slider-item active">
+        <img class="slider-image" src="src/img/Indeyka.jpeg">    
+        <div class="slider-text">REST API под сливочным соусом!<br>
+            <form action="articles/rest.html"><button class="detailed" type="submit">Подробнее...</button></form>
+        </div>
+    </div> 
+
+    <div class="slider-item">
+        <img class="slider-image" src="src/img/Calculator.png">    
+        <div class="slider-text">Адаптивный калькулятор Windows 10 на чистом JS<br>
+            <form action="works/calculator.html"><button class="detailed" type="submit">Интересно?</button></form>
+        </div>
+    </div> 
+
+    <div class="slider-item">
+        <img class="slider-image" src="src/img/It.jpg">    
+        <div class="slider-text">Задание на junior-разработчика. Таблица с данными.<br>
+            <form action="works/table.html"><button class="detailed" type="submit">Просмотреть работу</button></form>
+        </div>
+    </div> 
+
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+    <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    </div>
+
+</div>  
+
+<script src="src/js/slider.js"></script>
+<script src="src/js/menu_btn.js"></script>
+</body>
+</html>

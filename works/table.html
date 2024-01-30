@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица</title>
+    <link rel="stylesheet" href="../src/style/wark_header.css">
+    <link rel="stylesheet" href="../src/style/jun_table_style.css">
+</head>
+<body>
+
+    <header class='header'>
+        
+        <nav class='navbar'>
+            <a href='../index.html'>Главная</a>
+            <a href='../pages/articles.html'>Мои статьи</a>
+            <a href='../pages/works.html'>Примеры работ</a>
+        </nav>
+        
+        <img class='menu_btn' src="../src/icons/menu.png"/>
+
+        <nav class='contacts'>
+            <a href='../pages/autor.html'>Об авторе</a>
+            <a href='https://t.me/Mark_Bogdan'><img src="../src/icons/telegram.png"/></a>
+        </nav>
+
+    </header>     
+    <div class="image_background_container"></div>
+    <div class="main">
+
+    <div class="reference"><button id="reference">?</button></div>
+    <h3>Таблица</h3>
+    <br>
+
+
+    <div class="popup_form"> 
+    <form id="myForm" action="" method="POST">
+
+      <button id="closeForm">X</button>
+
+      <table>
+        <tr><td>Введите имя:</td><td><input type="text" name="name" id="name" placeholder="Имя" required autofocus></td></tr>
+        <tr><td>Введите фамилию:</td><td><input type="text" name="sname" id="sname" placeholder="Фамилия" required autofocus></td></tr>
+        <tr><td>Введите адресс электронной почты:</td><td><input type="email" name="email" id="email" placeholder="mail@mail.com" required></td></tr>
+        <tr><td>Введите номер телефона:</td><td><input type="text" name="phone" id="phone" placeholder="(000)000-0000" required autofocus></td></tr>
+        <tr><td>Введите адресс:</td><td><input type="text" name="address" id="address" placeholder="Адрес проживания" required autofocus></td></tr>
+        <tr><td>Введите город:</td><td><input type="text" name="city" id="city" placeholder="Город" required autofocus></td></tr>
+        <tr><td>Введите штат:</td><td><input type="text" name="state" id="state" placeholder="Провинция/штат" required autofocus></td></tr>
+        <tr><td>Введите почтовый индекс:</td><td><input type="number" name="index" required autofocus></td></tr>
+        <tr><td>Введите описание:</td><td><textarea name="descript" id="descript" placeholder="Описание" required autofocus></textarea></td></tr>
+        </table>
+    
+      <button type="submit" id="form_btn">Добавить в таблицу</button> <button type="reset">Очистить форму</button>
+    </form>
+  </div> 
+
+<div class="popup_ref"> 
+    <p style="text-align: right;">
+        <button id="closeRef">X</button>
+    </p>
+
+<h2>Техническое задание (<a href="https://daruse.ru/zadaniya-po-js-dlya-prokachki">взято отсюда...</a>)</h2>
+<br>
+<p>
+  Необходимо разработать приложение с использованием классов для отображения таблицы с данными. 
+</p><br>
+<p><strong>Функционал</strong></p>
+<br>
+<ul>
+<li>Сортировка по столбцам: при нажатии на название столбца строки таблицы сортируются по возрастанию, при повторном клике — по убыванию. Графическим элементом или текстовым сообщением указывается направление сортировки.</li>
+<li>Клиентская пагинация: данные необходимо отображать постранично, максимум 50 элементов на страницу. Необходимо предоставить пользовательскую навигацию для перехода по страницам.</li>
+<li>Фильтрация: компонент предоставляет текстовое поле, в которое пользователь может ввести текст и строки таблицы, данные которых не содержат подстроку, введённую пользователем, скрываются. Перефильтрация осуществляется по нажатию на кнопку "Найти".</li>
+<li>По клике на строку таблицы значения полей выводятся в дополнительном блоке под таблицей.</li>
+<li>Данные в таблицу загружаются с сервера. Способ загрузки с сервера на ваш выбор.</li>
+<li>Над таблицей присутсвует кнопка <strong>добавить</strong>, по нажатии на которую выпадает форма добавления ряда<br><br><pre><code>
+    +------+------------+-----------------+-----------------+---------------+
+    | id   | firstName  | lastName        | email           | phone         |
+    +------+------------+-----------------+-----------------+---------------+
+    |input | input      | input           | input           | input         |
+    +------+------------+-----------------+-----------------+---------------+
+</code></pre><br></li>
+<li>После заполнения всех инпутов активируется кнопка <strong>Добавить в таблицу</strong> которая вставляет заполненный ряд в начало таблицы</li>
+</ul>
+<p>Для демонстрации работы компонента необходимо сделать простую HTML страницу. Пользователю предлагается выбрать набор данных: маленький или большой. При выборе набора данных он загружается с сервера и по данным строится таблица.</p>
+
+<p>Формат данных от сервера</p>
+
+<p>Сервер возвращает JSON-массив данных. Пример данных:</p>
+<pre><code>
+    
+[
+ {
+    id: 101,
+    firstName: 'Sue',
+    lastName: 'Corson',
+    email: 'DWhalley@in.gov',
+    phone: '(612)211-6296',
+    address: {
+    	streetAddress: '9792 Mattis Ct',
+    	city: 'Waukesha',
+    	state: 'WI',
+    	zip: '22178'
+    },
+    description: 'et lacus magna dolor...',
+ }
+]
+
+</code></pre>
+<p>Маленький объем данных берется 
+<a href="http://www.filltext.com/?rows=32&amp;id=%7Bnumber%7C1000%7D&amp;firstName=%7BfirstName%7D&amp;lastName=%7BlastName%7D&amp;email=%7Bemail%7D&amp;phone=%7Bphone%7C(xxx)xxx-xx-xx%7D&amp;address=%7BaddressObject%7D&amp;description=%7Blorem%7C32%7D" rel="nofollow">по ссылке</a></p>
+<p>Большой объем данных берется
+<a href="http://www.filltext.com/?rows=1000&amp;id=%7Bnumber%7C1000%7D&amp;firstName=%7BfirstName%7D&amp;delay=3&amp;lastName=%7BlastName%7D&amp;email=%7Bemail%7D&amp;phone=%7Bphone%7C(xxx)xxx-xx-xx%7D&amp;address=%7BaddressObject%7D&amp;description=%7Blorem%7C32%7D" rel="nofollow">по ссылке</a></p>
+<br><p><strong>Замечания</strong></p><br>
+<ul>
+<li>Особое внимание следует уделить скорости работы. Зависание интерфейса при выполнении операций загрузки данных, фильтрации, сортировки недопустимо.</li>
+<li>Во время загрузки данных стоит показать какой-то индикатор</li>
+<li>Использование сторонних библиотек будет плюсом только в случае если это оправданно и вы сможете объяснить причину выбора. Показав свои знания в грамотном применении сторонних готовых решений, вы имеете шанс повысить свою профессиональную привлекательность для нас.</li>
+<li>Пишите код так, как бы вы его писали в работе — внутренности задания будут оцениваться даже тщательней, чем внешнее соответствие заданию. Код должен быть организован так, чтобы его можно было заново использовать.</li>
+<li>Помните про обработку ошибок!</li>
+<li>Верстка может быть самая простая. Визуализацию и украшение делайте на ваш вкус. Мы не против использования <a href="http://getbootstrap.com/" rel="nofollow">Bootstrap</a> или похожего UI фреймворк, но только для UI представления (нельзя использовать JS код для решения задачи, но можно использовать для оформительских эффектов (анимации и тому подобное))!</li>
+</ul>
+<br><p><strong>Схема визуального представления данных</strong></p>
+<pre><code>
++------+------------+-----------------+-----------------+---------------+
+| id ▲ | firstName ▼| lastName      ▼ | email          ▼| phone        ▼|
++------+------------+-----------------+-----------------+---------------+
+| 101  | Sue        | Corson          | DWhalley@in.gov | (612)211-6296 |
++------+------------+-----------------+-----------------+---------------+
+| 102  | Lor        | Ipsumd          | dwhalley@in.gov | (612)211-6296 |
++------+------------+-----------------+-----------------+---------------+
+| 103  | Ips        | Umdolo          | dwhalley@in.gov | (612)211-6296 |
++------+------------+-----------------+-----------------+---------------+
+</code></pre><br>
+<p>Если выделен пользователем с <code>id = 101</code>, то под таблицей выводим следующую информацию:</p><br>
+<pre><code>Выбран пользователь &lt;b&gt;Sue Corson&lt;/b&gt;
+Описание:
+&lt;textarea&gt;
+et lacus magna dolor...
+&lt;/textarea&gt;
+Адрес проживания: &lt;b&gt;9792 Mattis Ct&lt;/b&gt;
+Город: &lt;b&gt;Waukesha&lt;/b&gt;
+Провинция/штат: &lt;b&gt;WI&lt;/b&gt;
+Индекс: &lt;b&gt;22178&lt;/b&gt;
+</code></pre><br>
+                            
+</div> 
+
+    <div id="utilBtn">
+      <button id="popup_btn">Добавить данные вручную</button>
+      <button id="loadS">Добавить маленький обьем</button>
+      <button id="loadB">Добавить большой обьем</button>
+      <button id="clearT">Очистить таблицу</button><br><br>
+    </div>
+    
+    <div id="navBtn">
+      <input type="text" id="searchInput" placeholder="Поиск по таблице...">
+      <span>Отображать элементов на странице: </span>
+      <button class="rowBtn">5</button>
+      <button class="rowBtn" style="background-color: #4079d4">10</button>
+      <button class="rowBtn">20</button>
+      <button class="rowBtn">50</button>
+    </div>
+
+    
+    
+    <div class="table_display">
+      <div class="" id="loading"></div>
+      <table class="table-sortable">
+        <thead>
+        <tr> 
+            <th >id</th>
+            <th >firstName</th>
+            <th >lastName</th>
+            <th >email</th>
+            <th >phone</th>
+            <th >streetAddress</th>
+            <th >city</th>
+            <th >state</th>
+            <th >zip</th>
+            <th >discription</th>
+        </tr> </thead>
+      
+      
+        <tbody id="myTable" class="myTable">
+          <tr> 
+            <td >1</td>
+            <td >Captain Jack</td>
+            <td >Sparrow</td>
+            <td >Sparrow@seemail.com</td>
+            <td >232-23-232</td>
+            <td >See</td>
+          <td >Isla de Muerta</td>
+          <td >Caribbean</td>
+          <td >008300</td>
+          <td >Pirat</td>
+        </tr>
+
+        <tr> 
+          <td >2</td>
+          <td >Arnold</td>
+          <td >Schwarzenegger</td>
+          <td >Arny@email.com</td>
+          <td >123-455-67</td>
+          <td >Star Alley</td>
+          <td >Los Angeles</td>
+          <td >California</td>
+          <td >0067530</td>
+          <td >Terminator, Actor</td>
+      </tr>
+
+        
+        </tbody>
+      </table>
+
+    </div>
+  
+
+    <br><div class='pagination_nav'>
+      <button id="firstBtn">Первая</button>
+      <button id="prev">Предыдущая</button>
+      Страница: <span id="current">1</span> / <span id="last">1</span>
+      <button id="next">Следующая</button>
+      <button id="lastBtn">Последняя</button>
+      
+    </div>
+
+    <div class='description'></div>
+</div>
+
+<script src="../src/js/menu_btn.js"></script>
+<script src="../src/js/jun_table.js"></script>
+</body>
+</html>

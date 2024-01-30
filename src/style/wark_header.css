@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all .0s ease-out;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.main {
+    position: relative;
+    margin-top: 5%;
+}
+
+.image_background_container {
+    position: fixed;
+    mask-image: linear-gradient( rgba(0, 0, 0, 0.1) 20%, transparent 100%);
+    background-image: url("../img/Works.jpeg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+  }
+
+.header {
+    position: fixed;
+    height: 3%;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-image: url("../img/Works.jpeg");
+    z-index: 1000;
+}
+
+header .contacts a {
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 2rem;
+    text-decoration: none;
+    color: black;
+    text-shadow: 1px 0 1px #000, 
+}
+
+header .contacts img {
+    max-width: 20px
+}
+
+.header .contacts a:hover {
+    
+    transform: scale(1.2, 1.2);
+    color: rgb(86, 65, 39);
+}
+
+header .navbar a {
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.header .navbar a:hover {
+    
+    transform: scale(1.2, 1.2);
+    color: rgb(86, 65, 39);
+}
+
+.menu_btn {
+    display: none;
+    max-width: 25px
+}
+
+.menu_btn:hover {
+    max-width: 27px;
+    cursor: pointer;
+}
+
+
+
+/* Adaptation*/
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 770px) {
+    .menu_btn {
+        display: initial;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgb(162, 133, 80);
+        color: rgb(207, 207, 235);
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgb(162, 133, 80);
+        box-shadow: 0rem 0.5rem 1rem rgb(162, 133, 80);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 2rem 0;
+        font-size: 1.8rem;
+    }
+
+    .header .navbar a:hover {
+    
+        transform: scale(1, 1);
+        transform: translateX(10px);
+        color: black;
+        cursor: pointer;
+    }
+
+    .header .navbar.active {
+        transform: scale(1);
+        opacity: 1;
+    }  
+}
+
+

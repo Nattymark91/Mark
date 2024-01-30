@@ -1,0 +1,243 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 0px;
+  background-color: #dcc8ac;
+}
+
+button{
+  cursor: pointer;
+  }
+
+/*************СПРАВКА*****************/
+.reference {
+  text-align: right;
+  button{
+    font-size: 2em;
+    border-radius: 5px;
+    background: #1d46ea;
+    color: white;
+    border: solid 3px #887f02;
+    width: 40px;
+    }}
+
+/*************ВЕРХНИЕ КНОПКИ*****************/
+#utilBtn {
+text-align: left;
+  button{
+  border-radius: 5px;
+  background: #eadc1d;
+  border: solid 1px #887f02;
+  color: #4b4704;
+  height: 30px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  }
+  button:hover {
+    border-radius: 5px;
+    background: #c6bb20;
+    color: #2c2a09;
+    }
+}
+
+#navBtn {
+text-align: left;
+font-size: 0.9em;
+button{
+  border-radius: 5px;
+  border: none;
+  background: 0;
+  font-size: 0.9em;  
+}}
+
+#searchInput{
+    width: 40%;
+    font-size: 1.1em;
+}
+
+/*************ЗАГРУЗЧИК*****************/
+
+#loading {
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #4144f2;
+  border-radius: 100%;
+  margin: 10% 45%;
+  display: none;
+  animation: spin 1s infinite linear;
+  position: fixed;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/*************ДИСПЛЕЙ*****************/
+
+.table_display {
+  border: 2px solid #dcc8ac;
+  height: 322px;
+  overflow:auto;
+  background-color: white;
+}
+
+/*************ТАБЛИЦА С ДАННЫМИ*****************/
+
+.table-sortable {
+  border-collapse: collapse;
+  width: 100%;
+  position: relative;
+}
+
+.table-sortable thead th {
+  position: sticky;
+  top: 0px;
+}
+
+.table-sortable th {
+	cursor: pointer;
+  background-color: #f0eec5;
+}
+
+.table-sortable .th-sort-asc::after {
+	content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+	content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+	margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+	background-color: #d2d0aa;
+}
+
+th:nth-child(6), th:nth-child(7), th:nth-child(8), th:nth-child(9), th:nth-child(10),
+td:nth-child(6), td:nth-child(7), td:nth-child(8), td:nth-child(9), td:nth-child(10) {
+  display: none;
+ }
+
+th, td {
+  border: 1px solid #dcc8ac;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  border-width: 1px 1px 0;
+  background-color: #f7f7f7;
+}
+
+
+/***************ОПИСАТЕЛЬНЫЙ БЛОК***************/
+
+.description {
+  text-align: left;
+  margin-top: 20px;
+}
+
+
+/*************ОКНО ФОРМЫ**********/
+
+.popup_form {
+  z-index: 10000;
+  background-color: #dadde1;
+  border-radius: 2px;
+  border: 1px solid #d7d8d9;
+  padding: 5px;
+  width: 60%;
+  left: 20%;
+  position: absolute;
+  display: none;
+  text-align: right;
+  
+
+  table {
+    width: 100%;
+    background-color: #f0f3f6;
+    border: none
+  }
+  
+  tr :first-child {
+    width: 0;
+    white-space: nowrap;
+    text-align: left;
+    border: none
+  }
+  }
+  
+  tr :last-child {
+    width: 100%;
+    border: none
+  }
+
+  #myForm {
+    input, textarea { 
+      width: 90%; 
+      border: 1px solid #d2cccc} 
+  }
+
+  #closeForm {
+    color: white;
+    background-color: red;
+  }
+
+ 
+  
+.popup_form.active {
+  display: block; 
+}
+
+
+
+/*************ОКНО СПРАВКИ**********/
+
+.popup_ref {
+  z-index: 10000;
+  margin-top: -5rem;
+  background-color: #f2f4f7;
+  border-radius: 2px;
+  border: 5px solid #dadde1;
+  padding: 30px;
+  width: 70%;
+  left: 14%;
+  right: 14%;
+  position: absolute;
+  display: none;
+  text-align: left;
+
+  h2 {
+    text-align: center;
+  }
+  }
+
+  .popup_ref.active {
+    display: block; 
+  }
+
+  #closeRef {
+    color: white;
+    background-color: red;
+  }
+
+
+  /*************Adaptation**********/
+
+  @media (max-width: 770px) {
+    .reference {
+      padding-top: 5rem;
+      }
+      }
+  
+

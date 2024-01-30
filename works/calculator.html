@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="../src/style/warks_header.css">
+    <link rel="stylesheet" href="../src/style/calc_style.css">
+</head>
+<body>
+
+    <header class='header'>
+        
+        <nav class='navbar'>
+            <a href='../index.html'>Главная</a>
+            <a href='../pages/articles.html'>Мои статьи</a>
+            <a href='../pages/works.html'>Примеры работ</a>
+        </nav>
+        
+        <img class='menu_btn' src="../src/icons/menu.png"/>
+
+        <nav class='contacts'>
+            <a href='../pages/autor.html'>Об авторе</a>
+            <a href='https://t.me/Mark_Bogdan'><img src="../src/icons/telegram.png"/></a>
+        </nav>
+
+    </header>     
+    <div class="image_background_container"></div>
+    <div class="image_cover_container"></div>
+
+    <div class="reference"><button id="reference">?</button></div>
+
+    <div class="popup_ref"> 
+        <p style="text-align: right;">
+            <button id="closeRef">X</button>
+        </p>
+    
+    <h3>Калькулятор Windows 10</h3>
+    <br>
+    <p>Окно калькулятора может быть перемещено по экрану за заголовок. </p><br>
+    <p>Для изменения размера окна - потяните за правый нижний угол. </p><br>
+    <p>При уменьшении размера окна калькулятора - изменяется набор кнопок. </p><br>
+    <p>Математические функции работают по аналогии с калькулятором Windows</p><br>
+                                
+    </div> 
+
+
+    <div class="pane" style="left: calc(50vw - 300px); top: calc(50vh - 280px)">
+        <div class="title">
+          <div class="closeBtn">X</div>
+        </div>
+  
+        <div class="content">
+        
+        <table class="calculator">
+          
+          <tr> 
+            <th colspan="4"><div class="disp" id="display"> 0 </div></th>
+          </tr>
+  
+          <tr>
+              <td class="dinamic_btn"><button onclick="procent()">%</button></td>
+              <td><button onclick="clearButton()">CE</button></td>
+              <td><button onclick="clearButton()">C</button></td>
+              <td><button onclick="backspace()">&lArr;</button></td>
+              <td><button class="operbtn">&divide;</button></td>
+          </tr>
+  
+          <tr>
+            <td class="dinamic_btn"><button onclick="partof()">1/x</button></td>
+            <td class="dinamic_btn"><button onclick="squaring()">x&sup2;</button></td>
+            <td class="dinamic_btn"><button onclick="squareroot()">&sup2;&radic;x</button></td>
+            <td><button class="operbtn">&divide;</button></td>
+        </tr>
+  
+          <tr>
+              <td><button class="numbtn">7</button></td>
+              <td><button class="numbtn">8</button></td>
+              <td><button class="numbtn">9</button></td>
+              <td><button class="operbtn">&#215;</button></td>
+          </tr>
+  
+          <tr>
+              <td><button class="numbtn">4</button></td>
+              <td><button class="numbtn">5</button></td>
+              <td><button class="numbtn">6</button></td>
+              <td><button class="operbtn">-</button></td>
+          </tr>
+  
+          <tr>
+              <td><button class="numbtn">1</button></td>
+              <td><button class="numbtn">2</button></td>
+              <td><button class="numbtn">3</button></td>
+              <td><button class="operbtn">+</button></td>
+          </tr>
+  
+          <tr>
+              <td><button id="reversbtn" onclick="revers()">+/-</button></td>
+              <td><button class="numbtn">0</button></td>
+              <td><button id="commabtn" onclick="comma()">,</button></td>
+              <td><button id="resbtn" onclick="result()">=</button></td>
+          </tr>
+  
+          </table>
+  
+        </div>
+  
+        <div class="corner"></div>
+      </div>
+  
+      
+  
+<script src="../src/js/calc_pane.js"></script>
+<script src="../src/js/calc_main.js"></script>
+
+<script src="../src/js/menu_btn.js"></script>
+</body>
+</html>
